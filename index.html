@@ -286,7 +286,18 @@ const audioMap = {
   l3_drill_zaoshang: 'audio/l3_drill_zaoshang.mp3', l3_drill_caochang: 'audio/l3_drill_caochang.mp3',
   l3_drill_hanzi: 'audio/l3_drill_hanzi.mp3', l3_drill_zuotian: 'audio/l3_drill_zuotian.mp3',
   s_hengzhegou: 'audio/s_hengzhegou.mp3', s_wogou: 'audio/s_wogou.mp3',
-  sc_yue: 'audio/sc_yue.mp3', sc_xin: 'audio/sc_xin.mp3', sc_zhong: 'audio/sc_zhong.mp3'
+  sc_yue: 'audio/sc_yue.mp3', sc_xin: 'audio/sc_xin.mp3', sc_zhong: 'audio/sc_zhong.mp3',
+  ta1: 'audio/ta1.mp3', shei2: 'audio/shei2.mp3', de5: 'audio/de5.mp3', hanyu: 'audio/hanyu.mp3',
+  na3: 'audio/na3.mp3', guo2: 'audio/guo2.mp3', ne5: 'audio/ne5.mp3', ta1m: 'audio/ta1m.mp3',
+  tongxue: 'audio/tongxue.mp3', pengyou: 'audio/pengyou.mp3',
+  l4_q1: 'audio/l4_q1.mp3', l4_a1: 'audio/l4_a1.mp3', l4_q2: 'audio/l4_q2.mp3', l4_a2: 'audio/l4_a2.mp3',
+  l4_a2b: 'audio/l4_a2b.mp3', l4_q3: 'audio/l4_q3.mp3', l4_a3: 'audio/l4_a3.mp3', l4_q3b: 'audio/l4_q3b.mp3', l4_a3b: 'audio/l4_a3b.mp3',
+  l4_drill_zhishi: 'audio/l4_drill_zhishi.mp3', l4_drill_renshi: 'audio/l4_drill_renshi.mp3',
+  l4_drill_shengri: 'audio/l4_drill_shengri.mp3', l4_drill_changshi: 'audio/l4_drill_changshi.mp3',
+  l4_drill_yizhang: 'audio/l4_drill_yizhang.mp3', l4_drill_yiding: 'audio/l4_drill_yiding.mp3',
+  l4_drill_diyi: 'audio/l4_drill_diyi.mp3', l4_drill_shiyi: 'audio/l4_drill_shiyi.mp3',
+  s_shuwangou: 'audio/s_shuwangou.mp3', s_hengzhewangou: 'audio/s_hengzhewangou.mp3',
+  sc_qi: 'audio/sc_qi.mp3', sc_er: 'audio/sc_er.mp3', sc_ji: 'audio/sc_ji.mp3', sc_jiu: 'audio/sc_jiu.mp3'
 };
 function playAudio(id, text){
   const btn = window.event ? window.event.currentTarget : null;
@@ -337,6 +348,9 @@ function openLesson(i){
   if(i === 1){ renderLesson1(); setTimeout(initStrokeWriters, 0); return; }
   if(i === 2){ renderLesson2(); setTimeout(initStrokeWriters, 0); return; }
   if(i === 3){ renderLesson3(); setTimeout(initStrokeWriters, 0); return; }
+  if(i === 4){ renderLesson4(); setTimeout(initStrokeWriters, 0); return; }
+  if(i === 4){ renderLesson4(); setTimeout(initStrokeWriters, 0); return; }
+  if(i === 4){ renderLesson4(); setTimeout(initStrokeWriters, 0); return; }
   panel.innerHTML = `<div style="text-align:center;padding:30px 0;color:var(--ink-soft);">
     Дарси ${i} — мазмун ҳанӯз илова карда нашудааст. Суратҳои дарсро равон кунед, то онро месозем.
   </div>`;
@@ -1061,6 +1075,224 @@ function renderLesson3(){
   `;
 }
 
+function renderLesson4(){
+  const panel = document.getElementById('panel');
+  panel.innerHTML = `
+    <div class="panel-head">
+      <div class="idx">04</div>
+      <div class="titles">
+        <div class="zh">她是我的汉语老师</div>
+        <div class="py">Tā shì wǒ de Hànyǔ lǎoshī</div>
+        <div class="en">Ӯ муаллими хитоии ман аст</div>
+      </div>
+    </div>
+
+    <div class="section-lbl">1. Пиньини дарс ва тарзи пайваст кардан</div>
+    <div class="section-sub">Дар ин дарс се мавзӯи муҳим: фарқи чуқуртари zh/ch/sh/r, фарқи бунёди n аз ng, ва қоидаи истифодаи y/w.</div>
+    <table class="pytable">
+      <tr><th>Ҳарф/бунёд</th><th>Тарзи хондан</th></tr>
+      <tr><td style="font-family:'Noto Serif SC',serif;">zh, ch, sh, r</td><td>Нӯги забон ба боло печида, ба сақфи пеши даҳон наздик мешавад. zh — бе нафаси қавӣ; ch — бо нафаси қавии зиёд; sh — забон ламс намекунад, фақат тангӣ месозад; r — мисли sh, вале бо ларзиши овоз (садоӣ).</td></tr>
+      <tr><td style="font-family:'Noto Serif SC',serif;">n (пеши бинӣ)</td><td>Нӯги забон ба буриши болоӣ такя мекунад, даҳон каме кушода.</td></tr>
+      <tr><td style="font-family:'Noto Serif SC',serif;">ng (қафои бинӣ)</td><td>Решаи забон ба сақфи мулоим такя мекунад, даҳон бештар кушода мешавад.</td></tr>
+    </table>
+    <div class="note"><b>Қоидаи y/w:</b> агар бунёд бо i, u ё ü сар шавад ва ҳиҷо сарҳарф надошта бошад, дар навишт пеш аз он ҳарфи "y" (барои i/ü) ё "w" (барои u) илова мешавад. Масалан: i→yi, in→yin, ia→ya, iu→you; u→wu, ua→wa, ui→wei; ü→yu, üe→yue.</div>
+
+    <div class="section-sub" style="margin-top:14px;"><b>Тамрин</b> — фарқи zh/ch/sh/r ва n/ng-ро гӯш кунед:</div>
+    <div class="drillgrid">
+      <div class="drillcard">zhīshi<span class="transcript"><br>[чжиши]</span><br><button class="playbtn" onclick="playAudio('l4_drill_zhishi','知识')">&#128266;</button></div>
+      <div class="drillcard">rènshi<span class="transcript"><br>[женьши]</span><br><button class="playbtn" onclick="playAudio('l4_drill_renshi','认识')">&#128266;</button></div>
+      <div class="drillcard">shēngrì<span class="transcript"><br>[шэнжи]</span><br><button class="playbtn" onclick="playAudio('l4_drill_shengri','生日')">&#128266;</button></div>
+      <div class="drillcard">chángshí<span class="transcript"><br>[чханши]</span><br><button class="playbtn" onclick="playAudio('l4_drill_changshi','常识')">&#128266;</button></div>
+    </div>
+
+    <div class="section-lbl">2. Талаффуз — қоидаи тағйири оҳанги 一 (yī)</div>
+    <table class="pytable">
+      <tr><th>Ҳолат</th><th>Мисол</th></tr>
+      <tr><td>Пеш аз оҳанги 1, 2 ё 3 — 一 ба оҳанги 4 иваз мешавад</td><td style="font-family:'Noto Serif SC',serif;">yì zhāng, yì tiáo, yì zhǒng</td></tr>
+      <tr><td>Пеш аз оҳанги 4 — 一 ба оҳанги 2 иваз мешавад</td><td style="font-family:'Noto Serif SC',serif;">yídìng, yíkuài</td></tr>
+      <tr><td>Танҳо истифода шавад ё дар рақам — тағйир НАМЕЁБАД</td><td style="font-family:'Noto Serif SC',serif;">dì yī, yī èr sān, xīngqī yī, shíyī</td></tr>
+    </table>
+    <div class="section-sub" style="margin-top:14px;"><b>Тамрин</b> — тағйири оҳанги 一-ро гӯш кунед:</div>
+    <div class="drillgrid">
+      <div class="drillcard">yì zhāng<span class="transcript"><br>[и чжан]</span><br><button class="playbtn" onclick="playAudio('l4_drill_yizhang','一张')">&#128266;</button></div>
+      <div class="drillcard">yídìng<span class="transcript"><br>[и дин]</span><br><button class="playbtn" onclick="playAudio('l4_drill_yiding','一定')">&#128266;</button></div>
+      <div class="drillcard">dì yī<span class="transcript"><br>[ди и]</span><br><button class="playbtn" onclick="playAudio('l4_drill_diyi','第一')">&#128266;</button></div>
+      <div class="drillcard">shíyī<span class="transcript"><br>[ши и]</span><br><button class="playbtn" onclick="playAudio('l4_drill_shiyi','十一')">&#128266;</button></div>
+    </div>
+
+    <div class="section-lbl">3. Калимаҳои нав</div>
+    <div class="wordgrid">
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('ta1','她')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">她</div><div class="py">tā<span class="transcript"> [та]</span></div><div class="tj">ӯ (духтар/зан)</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('shei2','谁')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">谁</div><div class="py">shéi<span class="transcript"> [шэй]</span></div><div class="tj">кӣ (ҷонишини саволӣ)</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('de5','的')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">的</div><div class="py">de<span class="transcript"> [дэ]</span></div><div class="tj">аломати тааллуқият (аз они)</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('hanyu','汉语')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">汉语</div><div class="py">Hànyǔ<span class="transcript"> [Ханьюй]</span></div><div class="tj">забони хитоӣ</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('na3','哪')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">哪</div><div class="py">nǎ<span class="transcript"> [на]</span></div><div class="tj">кадом</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('guo2','国')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">国</div><div class="py">guó<span class="transcript"> [го]</span></div><div class="tj">кишвар</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('ne5','呢')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">呢</div><div class="py">ne<span class="transcript"> [нэ]</span></div><div class="tj">аломати саволии "-чӣ?"</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('ta1m','他')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">他</div><div class="py">tā<span class="transcript"> [та]</span></div><div class="tj">ӯ (мард)</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('tongxue','同学')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">同学</div><div class="py">tóngxué<span class="transcript"> [тхунсюэ]</span></div><div class="tj">ҳамсинф</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('pengyou','朋友')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">朋友</div><div class="py">péngyou<span class="transcript"> [пхэнйоу]</span></div><div class="tj">дӯст</div></div>
+    </div>
+
+    <div class="section-lbl">4. Грамматика</div>
+    <div class="gcard">
+      <div class="gtitle"><span class="zh">1.</span>Ҷонишинҳои саволии <ruby>谁<rt>shéi</rt></ruby> ва <ruby>哪<rt>nǎ</rt></ruby></div>
+      <div class="gbody">谁 барои пурсидани номи шахс истифода мешавад — ба ҷои номи одам гузошта мешавад. 哪 маънои "кадом" дорад ва сохташ чунин аст: 哪 + калимаи миқдорӣ/исм + исм.</div>
+      <div class="gex"><span class="tag">намуна</span>她是<ruby>谁<rt>shéi</rt></ruby>？ — Ӯ кист?</div>
+      <div class="gex"><span class="tag">намуна</span>你是<ruby>哪<rt>nǎ</rt></ruby>国人？ — Шумо аз кадом кишваред?</div>
+    </div>
+    <div class="gcard">
+      <div class="gtitle"><span class="zh">2.</span>Аломати сохторӣ <ruby>的<rt>de</rt></ruby></div>
+      <div class="gbody">Сохти "исм/ҷонишин + 的 + исм" тааллуқиятро мефаҳмонад. Агар исми баъд аз 的 калимаи хешовандӣ ё номи шахс бошад, 的 метавонад партофта шавад.</div>
+      <div class="gex"><span class="tag">сохт</span>我 + 的 + 汉语老师 = 我的汉语老师 (муаллими хитоии ман)</div>
+      <div class="gex"><span class="tag">намуна</span>她不是我同学 (的 партофта шуд, зеро 同学 калимаи шахсист)</div>
+    </div>
+    <div class="gcard">
+      <div class="gtitle"><span class="zh">3.</span>Аломати саволии <ruby>呢<rt>ne</rt></ruby> (1)</div>
+      <div class="gbody">呢 баъд аз исм ё ҷонишин гузошта мешавад, то дар бораи ҳамон мавзӯъ дубора пурсад — сохти маъмул: A……。B呢？ (маънои "аммо B-чӣ?")</div>
+      <div class="gex"><span class="tag">намуна</span>我是美国人。你<ruby>呢<rt>ne</rt></ruby>？ — Ман амрикоӣ ҳастам. Шумо-чӣ?</div>
+    </div>
+
+    <div class="section-lbl">5. Ҷумлаҳо</div>
+    <div class="dialog">
+      <div class="line"><span class="who">A:</span><span class="hz">她是谁？</span><span class="py">Tā shì shéi?</span><span class="transcript">[Та ши шэй?]</span><span class="tj">— Ӯ кист?</span><button class="playbtn inline" onclick="playAudio('l4_q1','她是谁')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">B:</span><span class="hz">她是我的汉语老师，她叫李月。</span><span class="py">Tā shì wǒ de Hànyǔ lǎoshī, tā jiào Lǐ Yuè.</span><span class="transcript">[Та ши во дэ Ханьюй лаоши, та цзяо Ли Юэ.]</span><span class="tj">— Ӯ муаллими хитоии ман аст, номаш Ли Юэ.</span><button class="playbtn inline" onclick="playAudio('l4_a1','她是我的汉语老师')" aria-label="Гӯш кардан">&#128266;</button></div>
+    </div>
+    <div class="dialog">
+      <div class="line"><span class="who">A:</span><span class="hz">你是哪国人？</span><span class="py">Nǐ shì nǎ guó rén?</span><span class="transcript">[Ни ши на го жэнь?]</span><span class="tj">— Шумо аз кадом кишваред?</span><button class="playbtn inline" onclick="playAudio('l4_q2','你是哪国人')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">B:</span><span class="hz">我是美国人。你呢？</span><span class="py">Wǒ shì Měiguó rén. Nǐ ne?</span><span class="transcript">[Во ши Мэйго жэнь. Ни нэ?]</span><span class="tj">— Ман амрикоӣ ҳастам. Шумо-чӣ?</span><button class="playbtn inline" onclick="playAudio('l4_a2','我是美国人你呢')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">A:</span><span class="hz">我是中国人。</span><span class="py">Wǒ shì Zhōngguó rén.</span><span class="transcript">[Во ши Чжунго жэнь.]</span><span class="tj">— Ман хитоӣ ҳастам.</span><button class="playbtn inline" onclick="playAudio('l4_a2b','我是中国人')" aria-label="Гӯш кардан">&#128266;</button></div>
+    </div>
+    <div class="dialog">
+      <div class="line"><span class="who">A:</span><span class="hz">他是谁？</span><span class="py">Tā shì shéi?</span><span class="transcript">[Та ши шэй?]</span><span class="tj">— Ӯ (мард) кист?</span><button class="playbtn inline" onclick="playAudio('l4_q3','他是谁')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">B:</span><span class="hz">他是我同学。</span><span class="py">Tā shì wǒ tóngxué.</span><span class="transcript">[Та ши во тхунсюэ.]</span><span class="tj">— Ӯ ҳамсинфи ман аст.</span><button class="playbtn inline" onclick="playAudio('l4_a3','他是我同学')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">A:</span><span class="hz">她呢？她是你同学吗？</span><span class="py">Tā ne? Tā shì nǐ tóngxué ma?</span><span class="transcript">[Та нэ? Та ши ни тхунсюэ ма?]</span><span class="tj">— Ӯ (зан)-чӣ? Ӯ ҳамсинфи шумост?</span><button class="playbtn inline" onclick="playAudio('l4_q3b','她呢她是你同学吗')" aria-label="Гӯш кардан">&#128266;</button></div>
+      <div class="line"><span class="who">B:</span><span class="hz">她不是我同学，她是我朋友。</span><span class="py">Tā bú shì wǒ tóngxué, tā shì wǒ péngyou.</span><span class="transcript">[Та бу ши во тхунсюэ, та ши во пхэнйоу.]</span><span class="tj">— Ӯ ҳамсинфи ман нест, ӯ дӯсти ман аст.</span><button class="playbtn inline" onclick="playAudio('l4_a3b','她不是我同学她是我朋友')" aria-label="Гӯш кардан">&#128266;</button></div>
+    </div>
+
+    <div class="section-lbl">6. Тартиби навишти ҳарфҳо — аниматсия ва худтамрин</div>
+    <div class="section-sub">Ҳарфҳои нави дарси 4. Аввал «Нишон додан»-ро занед, баъд «Худам нависам»-ро.</div>
+    <div class="strokegrid" id="strokegrid4">
+      <div class="strokecard"><div class="shz">她</div><div class="spy">tā <span class="transcript">[та]</span></div><div class="starget" id="sw4-ta1"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-ta1')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-ta1')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-ta1-status"></div></div>
+      <div class="strokecard"><div class="shz">谁</div><div class="spy">shéi <span class="transcript">[шэй]</span></div><div class="starget" id="sw4-shei"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-shei')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-shei')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-shei-status"></div></div>
+      <div class="strokecard"><div class="shz">的</div><div class="spy">de <span class="transcript">[дэ]</span></div><div class="starget" id="sw4-de"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-de')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-de')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-de-status"></div></div>
+      <div class="strokecard"><div class="shz">汉</div><div class="spy">hàn <span class="transcript">[хань]</span></div><div class="starget" id="sw4-han"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-han')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-han')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-han-status"></div></div>
+      <div class="strokecard"><div class="shz">语</div><div class="spy">yǔ <span class="transcript">[юй]</span></div><div class="starget" id="sw4-yu"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-yu')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-yu')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-yu-status"></div></div>
+      <div class="strokecard"><div class="shz">哪</div><div class="spy">nǎ <span class="transcript">[на]</span></div><div class="starget" id="sw4-na"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-na')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-na')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-na-status"></div></div>
+      <div class="strokecard"><div class="shz">国</div><div class="spy">guó <span class="transcript">[го]</span></div><div class="starget" id="sw4-guo"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-guo')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-guo')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-guo-status"></div></div>
+      <div class="strokecard"><div class="shz">呢</div><div class="spy">ne <span class="transcript">[нэ]</span></div><div class="starget" id="sw4-ne"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-ne')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-ne')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-ne-status"></div></div>
+      <div class="strokecard"><div class="shz">他</div><div class="spy">tā <span class="transcript">[та]</span></div><div class="starget" id="sw4-ta2"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-ta2')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-ta2')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-ta2-status"></div></div>
+      <div class="strokecard"><div class="shz">同</div><div class="spy">tóng <span class="transcript">[тхун]</span></div><div class="starget" id="sw4-tong"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-tong')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-tong')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-tong-status"></div></div>
+      <div class="strokecard"><div class="shz">朋</div><div class="spy">péng <span class="transcript">[пхэн]</span></div><div class="starget" id="sw4-peng"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-peng')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-peng')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-peng-status"></div></div>
+      <div class="strokecard"><div class="shz">友</div><div class="spy">yǒu <span class="transcript">[йоу]</span></div><div class="starget" id="sw4-you"></div>
+        <div class="strokebtns"><button class="sbtn" onclick="hwAnimate('sw4-you')">Нишон додан</button><button class="sbtn primary" onclick="hwQuiz('sw4-you')">Худам нависам</button></div>
+        <div class="sstatus" id="sw4-you-status"></div></div>
+    </div>
+
+    <div class="section-lbl">7. Аломатҳои асосии навишт (笔画)</div>
+    <div class="wordgrid">
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('s_shuwangou','竖弯钩')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">乚</div><div class="py">shùwāngōu<span class="transcript"> [шувангоу]</span> — амудӣ-каҷ-қалмоқ</div><div class="tj">амудӣ поён рафта, ба рост каҷ мешавад ва дар охир қалмоқ мекунад. Мисол: 七 (ҳафт), 儿 (писар)</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('s_hengzhewangou','横折弯钩')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">乙</div><div class="py">héngzhéwāngōu<span class="transcript"> [хэнчжэвангоу]</span> — уфуқӣ-хамида-каҷ-қалмоқ</div><div class="tj">уфуқӣ, баъд ба поён мехамад, каҷ мешавад ва қалмоқ мекунад. Мисол: 九 (нӯҳ), 几 (чанд)</div></div>
+    </div>
+
+    <div class="section-lbl">8. Ҳарфҳои якҷузъа (独体字) — намунаҳои китоб</div>
+    <div class="wordgrid">
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('sc_qi','七')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">七</div><div class="py">qī <span class="transcript">[тси]</span></div><div class="tj">ҳафт</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('sc_er','儿')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">儿</div><div class="py">ér <span class="transcript">[эр]</span></div><div class="tj">пештар маънои "бача" дошт, ҳоло бештар "писар"-ро мефаҳмонад</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('sc_ji','几')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">几</div><div class="py">jǐ <span class="transcript">[цзи]</span></div><div class="tj">пештар мизчаи хурди пастак буд, ҳоло "чанд" маъно дорад</div></div>
+      <div class="wordcard"><button class="playbtn" onclick="playAudio('sc_jiu','九')" aria-label="Гӯш кардан">&#128266;</button><div class="hz">九</div><div class="py">jiǔ <span class="transcript">[цзиу]</span></div><div class="tj">нӯҳ</div></div>
+    </div>
+    <div class="note"><b>Қоидаи тартиби навишт:</b> аз боло ба поён (从上到下) — мисол: 二, 三. Аз чап ба рост (从左到右) — мисол: 几, 八.</div>
+
+    <button class="quizbtn" onclick="showQuiz()">Гузаштани тест &#8594;</button>
+
+    <div class="qwrap" id="qwrap">
+      <div class="section-lbl" style="margin-top:32px;">Тести дарси 4 (10 савол)</div>
+      <div class="qcard"><div class="q">1. 她是谁？ маънояш чист?</div><div class="opts">
+        <label><input type="radio" name="q1" value="wrong">Ӯ аз куҷост?</label>
+        <label><input type="radio" name="q1" value="right">Ӯ кист?</label>
+        <label><input type="radio" name="q1" value="wrong">Ин чист?</label>
+      </div></div>
+      <div class="qcard"><div class="q">2. Фарқи 他 ва 她 дар чист?</div><div class="opts">
+        <label><input type="radio" name="q2" value="wrong">Якхела, фарқ надоранд</label>
+        <label><input type="radio" name="q2" value="right">他 барои мард, 她 барои зан</label>
+        <label><input type="radio" name="q2" value="wrong">他 барои якка, 她 барои ҷамъ</label>
+      </div></div>
+      <div class="qcard"><div class="q">3. 的 кадом вазифаро иҷро мекунад?</div><div class="opts">
+        <label><input type="radio" name="q3" value="right">Тааллуқиятро нишон медиҳад (аз они)</label>
+        <label><input type="radio" name="q3" value="wrong">Ҷумларо ба саволӣ табдил медиҳад</label>
+        <label><input type="radio" name="q3" value="wrong">Инкор мекунад</label>
+      </div></div>
+      <div class="qcard"><div class="q">4. Дар ҷумлаи "我是美国人。你呢？" калимаи 呢 чӣ вазифа дорад?</div><div class="opts">
+        <label><input type="radio" name="q4" value="wrong">Тааллуқиятро нишон медиҳад</label>
+        <label><input type="radio" name="q4" value="right">Ҳамон саволро такрор мекунад ("шумо-чӣ?")</label>
+        <label><input type="radio" name="q4" value="wrong">Инкор мекунад</label>
+      </div></div>
+      <div class="qcard"><div class="q">5. 汉语 маънояш чист?</div><div class="opts">
+        <label><input type="radio" name="q5" value="wrong">Хитой (кишвар)</label>
+        <label><input type="radio" name="q5" value="right">Забони хитоӣ</label>
+        <label><input type="radio" name="q5" value="wrong">Муаллими хитоӣ</label>
+      </div></div>
+      <div class="qcard"><div class="q">6. Сохти дурусти "哪" дар савол кадом аст?</div><div class="opts">
+        <label><input type="radio" name="q6" value="right">哪 + калимаи миқдорӣ/исм + исм</label>
+        <label><input type="radio" name="q6" value="wrong">исм + 哪</label>
+        <label><input type="radio" name="q6" value="wrong">哪 танҳо истифода мешавад</label>
+      </div></div>
+      <div class="qcard"><div class="q">7. "一" (yī) пеш аз калимаи оҳанги 4 (мисли 定) чӣ гуна тағйир меёбад?</div><div class="opts">
+        <label><input type="radio" name="q7" value="wrong">Ба оҳанги 4 иваз мешавад</label>
+        <label><input type="radio" name="q7" value="right">Ба оҳанги 2 иваз мешавад (yídìng)</label>
+        <label><input type="radio" name="q7" value="wrong">Тағйир намеёбад</label>
+      </div></div>
+      <div class="qcard"><div class="q">8. Кадоме дуруст навишта шудааст: "u" бе сарҳарф дар аввали калима?</div><div class="opts">
+        <label><input type="radio" name="q8" value="wrong">u (бе тағйир)</label>
+        <label><input type="radio" name="q8" value="right">wu (бо "w")</label>
+        <label><input type="radio" name="q8" value="wrong">yu</label>
+      </div></div>
+      <div class="qcard"><div class="q">9. 朋友 маънояш чист?</div><div class="opts">
+        <label><input type="radio" name="q9" value="wrong">Ҳамсинф</label>
+        <label><input type="radio" name="q9" value="right">Дӯст</label>
+        <label><input type="radio" name="q9" value="wrong">Муаллим</label>
+      </div></div>
+      <div class="qcard"><div class="q">10. Ҳарфи 几 пештар чӣ маъно дошт?</div><div class="opts">
+        <label><input type="radio" name="q10" value="wrong">Ҳафт</label>
+        <label><input type="radio" name="q10" value="right">Мизчаи хурди пастак</label>
+        <label><input type="radio" name="q10" value="wrong">Бача</label>
+      </div></div>
+      <div id="qerror" style="display:none;color:var(--seal);font-size:13px;margin-bottom:10px;">Ба ҳамаи саволҳо ҷавоб диҳед.</div>
+      <button class="quizbtn" onclick="submitQuiz()">Супоридани тест</button>
+
+      <div class="result" id="result">
+        <div class="seal" id="sealMark"></div>
+        <div class="score" id="scoreText"></div>
+        <div class="msg" id="scoreMsg"></div>
+        <button class="retrybtn" id="retryBtn" onclick="retryQuiz()" style="display:none;">Такрори дарс ва тести дубора</button>
+      </div>
+    </div>
+  `;
+}
+
 function showQuiz(){
   document.getElementById('qwrap').classList.add('active');
 }
@@ -1113,7 +1345,10 @@ const strokeChars = {
   'sw2-kou':'口','sw2-shan':'山','sw2-xiao':'小',
   'sw3-jiao':'叫','sw3-shen':'什','sw3-me':'么','sw3-ming':'名','sw3-zi':'字',
   'sw3-wo':'我','sw3-shi4':'是','sw3-lao':'老','sw3-shi1':'师','sw3-ma':'吗',
-  'sw3-xue':'学','sw3-sheng':'生','sw3-ren':'人'
+  'sw3-xue':'学','sw3-sheng':'生','sw3-ren':'人',
+  'sw4-ta1':'她','sw4-shei':'谁','sw4-de':'的','sw4-han':'汉','sw4-yu':'语',
+  'sw4-na':'哪','sw4-guo':'国','sw4-ne':'呢','sw4-ta2':'他','sw4-tong':'同',
+  'sw4-peng':'朋','sw4-you':'友'
 };
 const writers = {};
 function initStrokeWriters(){
