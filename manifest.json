@@ -1,0 +1,14 @@
+{
+  "name": "HSK 1 — Курси хитоӣ",
+  "short_name": "HSK 1",
+  "description": "Платформаи омӯзиши HSK 1 барои забони тоҷикӣ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F6F1E4",
+  "theme_color": "#B23A2E",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

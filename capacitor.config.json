@@ -1,0 +1,6 @@
+{
+  "appId": "com.hsk1.tajik",
+  "appName": "HSK 1",
+  "webDir": ".",
+  "bundledWebRuntime": false
+}
